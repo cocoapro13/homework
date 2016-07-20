@@ -4,7 +4,6 @@
 const express = require('express');
 const compression = require('compression');
 const session = require('express-session');
-const reload = require('reload');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const errorHandler = require('errorhandler');
@@ -170,8 +169,6 @@ app.get('/auth/linkedin/callback', passport.authenticate('linkedin', { failureRe
  */
 app.use(errorHandler());
 
-// Reload code here
-reload(app, app);
 
 /**
  * Start Express server.
