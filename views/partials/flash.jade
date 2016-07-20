@@ -1,0 +1,6 @@
+<!-- ko if: displayAlert -->
+.alert.alert-success.fade.in
+  button.close(type='button', data-dismiss='alert')
+    i.fa.fa-times-circle-o
+  div(data-bind='text: alertMessage')
+<!-- /ko -->

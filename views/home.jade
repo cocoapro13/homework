@@ -1,0 +1,105 @@
+extends layout
+
+block content
+  .row
+    .col-sm-3.col-lg-2
+      a(class='new-program')
+        button(type='button', class='btn btn-primary btn-large btn-iconbtn', name='addNewProgram', id='btn-new_program')
+          img(src='/images/plus_icon.png')
+        label(for='addNewProgram') New Program
+    .col-sm-9.col-lg-10
+      .row(data-bind="foreach: widgets")
+        .col-sm-12.col-md-6.col-lg-4
+          .panel.panel-default(data-bind="attr: {id: WidgetID}")
+            .panel-heading
+              button(type='button', class='btn btn-primary pull-right text-hide btn-editIcon') edit
+              h3.panel-title(data-bind="text: Name")
+            .panel-body
+              .row
+                .col-sm-12
+                  label.panel-label Sales by month
+                .col-sm-12.graph-wrapper
+                  <svg class="chart"></svg>
+              .row.alternate-row
+                .col-sm-5
+                  label.panel-label Total Monthly Sales
+                .col-sm-3
+                  label.panel-label Current
+                  div.value(data-bind="text: TotalMonthlySalesFormatted")
+                .col-sm-4
+                  label.panel-label 1-Year
+                  img(src="/images/spark_line.png")
+              .row.more-info(style='display:none;')
+                .col-sm-5
+                  label.panel-label Price Name
+                  <!-- ko foreach: PricingData -->
+                  .value.nowrap(data-bind="text: Name")
+                  <!-- /ko -->
+                .col-sm-3
+                  label.panel-label Current
+                  <!-- ko foreach: PricingData -->
+                  .value(data-bind="text: SalesFormatted")
+                  <!-- /ko -->
+                .col-sm-4
+                  label.panel-label 1-Year
+                  img(src="/images/spark_lines.png")
+              .row.more-wrapper
+                .col-sm-12
+                  button(type='button', class='btn btn-link btn-more', onClick='widgetViewMore(this)') more
+      .row
+        .col-sm-12
+          table.table-program_info
+            thead
+              tr
+                th All Programs
+                th Monthly Sales
+                th Monthly Attendance
+            tbody(data-bind="foreach: programs")
+              tr
+                td
+                  span(data-bind="text: Name")
+                  button(type='button', class='btn btn-link btn-more') more
+                td(data-bind="formatCurrencyPrecise: TotalMonthlySales")
+                td(data-bind="text: MonthlyAttendance")
+                  span.small visits
+  #dialog-new_program.dialog.panel.panel-default(title='Add New Program')
+    .panel-body
+      form#form-new_program
+        .form-group
+          label.panel-label(for='programType') Program Type
+          select(class='form-control', name='programType')
+            option Count Series
+            option Time Series
+            option Membership
+        .form-group
+          label.panel-label(for='programName') Program Name
+          input(type='text', class='form-control', name='programName')
+        .checkbox
+          label.panel-label
+            input(type='checkbox', value='allowOnlineScheduling') 
+            | Allow Online Scheduling
+        .form-group
+          label.panel-label(for='capacity') Default Capacity
+          input(type='number', class='form-control', name='capacity')
+        .form-group
+          p.form-group-header.panel-label Tabs Program Will Appear On
+          label.checkbox-inline.panel-label
+            input(type='checkbox', name=tabs, value='classes') 
+            | Classes
+          label.checkbox-inline.panel-label
+            input(type='checkbox', name=tabs, value='Appointments') 
+            | Appointments
+          label.checkbox-inline.panel-label
+            input(type='checkbox', name=tabs, value='Workshops') 
+            | Workshops
+          label.checkbox-inline.panel-label
+            input(type='checkbox', name=tabs, value='Outside') 
+            | Outside
+          label.checkbox-inline.panel-label
+            input(type='checkbox', name=tabs, value='Inside') 
+            | Inside
+          label.checkbox-inline.panel-label
+            input(type='checkbox', name=tabs, value='Gym') 
+            | Gym
+        .form-group.text-center
+          button(type='submit', class='btn btn-primary') Submit

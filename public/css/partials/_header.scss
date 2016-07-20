@@ -1,0 +1,105 @@
+// Header & Nav Bar
+.navbar-main {
+  background-color: $brand-secondary;
+  -webkit-box-shadow: inset 0px -1px 0px 0px rgba(196,223,209,1);
+  -moz-box-shadow: inset 0px -1px 0px 0px rgba(196,223,209,1);
+  box-shadow: inset 0px -1px 0px 0px rgba(196,223,209,1); 
+        
+  .logo {
+    padding:10px 16px;
+  }       
+}
+
+@media all and (min-width:768px) {
+  .navbar-main {     
+
+    .nav.nav-tabs {
+      margin-top: 30px;
+      background: #ffffff; /* Old browsers */
+      background: -moz-linear-gradient(top,  #ffffff 0%, #edf0ef 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top,  #ffffff 0%,#edf0ef 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom,  #ffffff 0%,#edf0ef 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#edf0ef',GradientType=0 ); /* IE6-9 */
+      border-bottom: 1px solid #c4c8cb;
+      border-top: 1px solid #cedee2;
+      margin-right:0;
+      height:43px;
+      
+      li {
+        a {
+          color: #658a77;
+          font-size:15px;
+          padding: 10px 20px;
+          border-right: 1px solid #c4c8cb;
+          margin-right:0;
+          &:hover {
+            background-color:#ffffff;
+          }
+        }
+        &:first-child a {
+          border-left: 1px solid #c4c8cb;
+        }
+        &.active a {
+          padding:12px 20px;
+          margin-top:-4px;
+          color: #000000;
+          border-top:1px solid #9dacb0;
+          border-left:1px solid #9dacb0;
+          border-right:1px solid #9dacb0;
+          -webkit-box-shadow: 0px 8px 7px -1px rgba(0,0,0,0.75);
+          -moz-box-shadow: 0px 8px 7px -1px rgba(0,0,0,0.75);
+          box-shadow: 0px 8px 7px -1px rgba(0,0,0,0.75);
+        }
+      }
+    }
+  }
+
+  .navbar-secondary {
+    top:73px;
+    box-shadow:none;
+    background: #ffffff;
+    li {
+      
+      a {
+        text-transform: none;
+        color:#6c6c6c;
+        padding: 15px 24px 15px 0;
+        font-size: 1.4em;
+        &:hover {
+          background: none;
+        }
+      }
+
+      &.active a {
+        color: #545353;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 999px) {
+  .navbar-secondary {
+    top:144px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .navbar-secondary {
+    display:none;
+  }
+  .navbar-main {
+    .nav {
+      li {
+        width:calc(100% + 30px);
+        padding:0;
+        margin-left:-15px;
+        margin-right:-15px;
+        a {
+          border-radius:0;
+          padding:16px 16px;
+          border:none;
+        }
+      }
+    }
+  }
+}

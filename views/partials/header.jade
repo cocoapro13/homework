@@ -1,0 +1,38 @@
+.navbar.navbar-default.navbar-fixed-top.navbar-main
+  .navbar-header
+    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+      span.sr-only Toggle navigation
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    a.navbar-logo(href='/')
+      img(src='/images/logo.png', class='logo')
+  .collapse.navbar-collapse
+    ul.nav.nav-tabs.navbar-right
+        li.active
+          a(href='/dashboard') Dashboard
+        li(class=(title == 'Login') ? 'active' : undefined)
+          a(href='/login') Sign In
+        li
+          a(href='/classes') Classes
+        li
+          a(href='/workshops') Workshops
+        li
+          a(href='/appointments') Appointments
+        li
+          a(href='/client-home') Client Home
+        li
+          a(href='/retail') Retail
+.navbar.navbar-fixed-top.navbar-secondary
+  .container
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li
+          a Dashboard
+        li.active
+          a Business Overview
+        li
+          a Schedule
+        li
+          a Reports
+

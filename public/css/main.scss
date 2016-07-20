@@ -1,0 +1,278 @@
+@import "themes/default/variables";
+
+@import "lib/bootstrap/bootstrap";
+@import "lib/bootstrap-social";
+@import "lib/font-awesome/font-awesome";
+
+@import "themes/default/default";
+
+@import "partials/header";
+
+// Scaffolding
+// -------------------------
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  padding-top: 120px;
+  font-family: 'Arial', sans-serif;
+  font-size: 10px;
+}
+
+.content {
+  background: #fcfbf4; /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover,  #fcfbf4 0%, #cfcec1 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover,  #fcfbf4 0%,#cfcec1 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center,  #fcfbf4 0%,#cfcec1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfbf4', endColorstr='#cfcec1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  min-height: calc(100vh - 120px);
+  padding: 20px 0;
+}
+
+.alternate-row {
+  background-color: #fafaf5;
+  border-top:1px solid #f4f3e8;
+  border-bottom:1px solid #f4f3e8;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+  & + .row {
+    margin-top:10px;
+  }
+}
+
+
+// Input Fields
+// -------------------------
+
+textarea {
+  resize: vertical;
+}
+.radio-inline, .checkbox-inline {
+  margin-right:12px;
+  &:last-child {
+    margin-right:0;
+  }
+}
+.radio-inline + .radio-inline, .checkbox-inline + .checkbox-inline {
+  margin-left:0;
+}
+
+
+// Alerts
+// -------------------------
+
+.alert {
+  margin-top: 20px;
+}
+
+// Thumbnails
+// -------------------------
+
+.thumbnail {
+  padding: 0;
+  border-radius: 0;
+  box-shadow: 0 0 5px #ccc, inset 0 0 0 #000;
+}
+
+// Font Icons
+// -------------------------
+
+.fa {
+  margin-right: 6px;
+}
+
+// Button Overrides
+// -------------------------
+
+.btn-iconbtn {
+  padding:22px 24px;
+  border-radius: 5px;
+  background: #b4d294; /* Old browsers */
+  background: -moz-linear-gradient(top, #b4d294 0%, #90b879 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #b4d294 0%,#90b879 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #b4d294 0%,#90b879 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4d294', endColorstr='#90b879',GradientType=0 ); /* IE6-9 */
+  
+  & ~ label {
+    color: #000000;
+    font-size:1.2em;
+    display:block;
+    padding-top:4px;
+  }
+}
+
+.btn-editIcon {
+  background-image: url(/images/pencil_icons.png) !important;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  width:21px;
+  height:21px;
+  border-radius:2px;
+  border: 1px solid #f1f1ee;
+  box-shadow:none;
+  &:hover, &:active, &:focus {
+    background-color:transparent;
+    background-position:center 2px;
+    border-color: #737373;
+  }
+}
+
+.btn-more {
+  color: #969688;
+  padding: 4px 0;
+  font-size: 1em;
+}
+
+
+// Panel Overrides
+// ----------------------
+.panel-default {
+  & > .panel-heading {
+    background:none;
+    border: none;
+    padding-top:20px;
+    .panel-title {
+      font-weight: bold;
+      color: #333333;
+    }
+  }
+  .panel-body {
+    padding-bottom:0;
+    .panel-label {
+      color: #969688;
+      font-size: 1em;
+      font-weight: normal;
+      margin-bottom:3px;
+    }
+    .value {
+      font-size:1.2em;
+      margin-bottom:2px;
+      &.nowrap {
+        max-height:17px;
+        text-overflow:ellipsis;
+        overflow:hidden;
+        white-space:nowrap;
+      }
+    }
+    .more-wrapper {
+      margin-top:0;
+    }
+  }
+}
+
+
+// Program Table
+// ----------------------
+.table-program_info {
+  width:100%;
+  thead {
+    tr {
+      border-bottom: 1px solid #ddddd3;
+      th {
+        color: #878771;
+        padding: 10px 20px 5px 0;
+        font-weight: normal;
+        white-space: nowrap;
+        &:first-child {
+          font-size:1.2em;
+        }
+        &:last-child {
+          white-space: normal;
+          width: 99%;
+        }
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        font-size:1.4em;
+        padding:10px 20px 0 0;
+        white-space: nowrap;
+        vertical-align:top;
+        button {
+          display: block;
+          font-size: 1rem;
+          padding:0px;
+        }
+        &:last-child {
+          white-space: normal;
+          width: 99%;
+        }
+      }
+      &:first-child td {
+        padding-top:20px;
+      }
+    }
+  }
+}
+
+// Modal Overrides
+// ----------------------
+.ui-dialog {
+  .ui-dialog-titlebar {
+    border:none;
+    background:none;
+    margin:10px 10px 0;
+    
+    .ui-dialog-title {
+      font-size:1.6em;
+    }
+    .ui-button {
+      background:none;
+      right:10px;
+    }
+  }
+  .panel.panel-default {
+    margin:0;
+    box-shadow:none;
+    .panel-body {
+      .panel-label {
+        line-height:20px;
+        font-size:1.2em;
+      }
+    }
+  }
+}
+
+.graph-wrapper {
+  margin-bottom:4px;
+}
+.chart {
+  rect {
+    fill:#add2b0;
+    &:first-child {
+      fill: #c5b4d8;
+    }
+  }
+  text {
+    fill: #969688;
+    font: 10px sans-serif;
+  }
+}
+
+
+
+// Responsive Fixes
+// ----------------------
+@media all and (max-width: 999px) {
+  body {
+    padding-top:195px;
+  }
+}
+@media all and (max-width: 767px) {
+  body {
+    padding-top:71px;
+  }
+}
+
+
+
+
+
+
+
