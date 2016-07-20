@@ -21,26 +21,26 @@ block content
                 .col-sm-12.graph-wrapper
                   <svg class="chart"></svg>
               .row.alternate-row
-                .col-sm-5
+                .col-xs-5
                   label.panel-label Total Monthly Sales
-                .col-sm-3
+                .col-xs-3
                   label.panel-label Current
                   div.value(data-bind="text: TotalMonthlySalesFormatted")
-                .col-sm-4
+                .col-xs-4
                   label.panel-label 1-Year
                   img(src="/images/spark_line.png")
               .row.more-info(style='display:none;')
-                .col-sm-5
+                .col-xs-5
                   label.panel-label Price Name
                   <!-- ko foreach: PricingData -->
                   .value.nowrap(data-bind="text: Name")
                   <!-- /ko -->
-                .col-sm-3
+                .col-xs-3
                   label.panel-label Current
                   <!-- ko foreach: PricingData -->
                   .value(data-bind="text: SalesFormatted")
                   <!-- /ko -->
-                .col-sm-4
+                .col-xs-4
                   label.panel-label 1-Year
                   img(src="/images/spark_lines.png")
               .row.more-wrapper
